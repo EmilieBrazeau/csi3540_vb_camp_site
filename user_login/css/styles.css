@@ -1,0 +1,75 @@
+body,html{
+    margin:0;
+    padding:0;
+    height: 100%;
+    background: #3d6dcd !important;
+}
+
+.user_card{
+    height: 400px;
+    width: 350px;
+    margin-top: auto;
+    margin-bottom: auto;
+    background: #c6e2ff;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+}
+
+.brand_logo_container{
+    position: absolute;
+    height: 200px;
+    width: 200px;
+    top: -80px;
+    border-radius: 50%;
+    /* padding: 10px; */
+    text-align: center;
+}
+
+.brand_logo{
+    height: 195px;
+    width: 195px;
+    border-radius: 50%;
+    /* border: 2px solid white; 
+    top: 75px;*/
+}
+
+.form_container{
+    margin-top: 100px;
+}
+
+.login_btn{
+    width: 100%;
+    background: #f68b3c !important;
+    color: white !important;
+}
+
+.login_btn:focus{
+    box-shadow: none !important;
+    outline: 0px !important;
+}
+
+.login_container{
+    padding: 0 2rem;
+}
+
+.input-group-text{
+    background: #f68b3c !important;
+    color: white !important;
+    border: 0 !important;
+    height: 100%;
+    border-radius: 0.25rem 0 0 0.25rem !important;
+}
+
+.input_user,.input_pass:focus{
+    box-shadow: none !important;
+    outline: 0px !important;
+}
+
+.custom-checkbox .custom-control-imput:checked~.custom-control-label::before{
+    background-color: #f68b3c !important;
+}
