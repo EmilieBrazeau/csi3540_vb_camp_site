@@ -19,7 +19,7 @@
             <div class="user_card">
                 <div class="d-flex justify-content-center">
                     <div class="brand_logo_container">
-                        <img src="img/volleyball_logo.png" class="brand_logo" alt="Beach Volleyball Camp">
+                        <img src="img/volleyball_logo_camp.png" class="brand_logo" alt="Beach Volleyball Camp">
                     </div>
                 </div>
                 <div class="d-flex justify-content-center form_container">
