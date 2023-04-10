@@ -15,7 +15,19 @@ if($result){
         $_SESSION['userlogin'] = $user;
         echo '1';
     }else{
-        echo 'There was no user match.';
+        $sql2 = "SELECT * FROM admin WHERE username = ? AND password = ? LIMIT 1";
+        $stmtselect2 = $db->prepare($sql2);
+        $result2 = $stmtselect2->execute([$username, $password]);
+        if($result2){
+            $user2 = $stmtselect2->fetch(PDO::FETCH_ASSOC);
+            if($stmtselect2->rowCount() > 0){
+                $_SESSION['userlogin'] = $user2;
+                echo '2';
+            }
+        }
+        else{
+            echo 'There was no user match.';
+        }
     }
 }else{
     echo "There were errors while connecting to database";
