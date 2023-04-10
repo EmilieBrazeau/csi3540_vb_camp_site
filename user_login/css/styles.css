@@ -44,6 +44,7 @@ body,html{
     width: 100%;
     background: #f68b3c !important;
     color: white !important;
+    margin-top: 25px;
 }
 
 .login_btn:focus{
@@ -70,4 +71,33 @@ body,html{
 
 .custom-checkbox .custom-control-imput:checked~.custom-control-label::before{
     background-color: #f68b3c !important;
+}
+
+.navbar {
+    max-height: 80px;
+    padding-left: 15px;
+    background: #3d6dcd !important;
+}
+
+.navbar-brand{
+    font-weight: bold;
+    color: white;
+}
+
+.nav-link{
+    color: #F7CD3B;
+}
+
+.nav-text{
+    color: #ffffff;
+}
+
+.navbar-nav {
+    margin-top: -15px; /* adjust the value to your preference */
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.d-flex{
+    align-items: flex-start;
 }
