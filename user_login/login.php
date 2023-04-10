@@ -24,23 +24,19 @@
                 </div>
                 <div class="d-flex justify-content-center form_container">
                     <form>
+                        <label for="username"><b>Username (email)</b></label>
                         <div class="input-group mb-3">
                             <div class="input-group-append">
                                 <span class="input-group-text"><i class="fas fa-user"></i></span>
                             </div>
                             <input type="text" name="username" id="username" class="form-control input_user" required>
                         </div>
+                        <label for="password"><b>Password</b></label>
                         <div class="input-group mb-2">
                             <div class="input-group-append">
                                 <span class="input-group-text"><i class="fas fa-key"></i></span>
                             </div>
                             <input type="password" name="password" id="password" class="form-control input_pass" required>
-                        </div>
-                        <div class="form-group">
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" name="rememberme" class="custom-control-input" id="customControlInline">
-                                <label for="customControlInline" class="custom-control-label">Remember me</label>
-                            </div>
                         </div>
                     
                         <div class="d-flex justify-content-center mt-3 login_container">
@@ -49,12 +45,12 @@
                     </form>
                 </div>
                 <div class="mt-4">
-                    <div class="d-flex justify-content-center links">
-                        Don't have an account? <a href="../user_account/registration.php" class="ml-2">Sign Up</a>
-                    </div>
-                    <div class="d-flex justify-content-center">
+                    <div class="d-flex justify-content-center links"><b>Don't have an account?</b></div>
+                    <div class="d-flex justify-content-center links"><a href="../user_account/registration.php" class="ml-2"><b>Sign Up</b></a></div>
+                </div>
+                    <!-- <div class="d-flex justify-content-center">
                         <a href="registration.php">Forgot password?</a>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -81,18 +77,16 @@
                         data: {username: username, password: password},
                         success: function(data){
                             if($.trim(data) === "1"){
-                                setTimeout(' window.location.href = "index.php"', 2000);
+                                window.location.href = "index.php";
                             }
                         },
                         error: function(data){
-                            alert('There were errors while doind the operation.');
+                            alert('There were errors while doing the operation.');
                         }
                     });
                 }
             });
         });
-        
-
     </script>
 </body>
 </html>

@@ -2,7 +2,6 @@
 <html>
 <head>
     <title>User Registration | PHP</title>
-    <!-- <link rel="stylesheet" type="text/css" href="../bootstrap-5.3.0-alpha3-dist/css/bootstrap.min.css"> -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="styles.css">
@@ -79,10 +78,14 @@
                         data: {firstname: firstname, lastname: lastname, email: email, phonenumber: phonenumber, password: password},
                         success: function(data){
                             Swal.fire({
-                                'title': 'Successful',
+                                'title': 'Successfully registered!',
                                 'text': data,
                                 'type': 'success'
-                            })
+                            }).then(function(){
+                                if($.trim(data) === "Press OK to log in."){
+                                    window.location.href = "../user_login/index.php";
+                                }
+                            });
                         },
                         error: function(data){
                             Swal.fire({
