@@ -5,10 +5,10 @@ body,html{
     background: #3d6dcd !important;
 }
 
-.user_card{
-    height: 400px;
+.registration_card{
+    height: 670px;
     width: 350px;
-    margin-top: auto;
+    margin-top: 180px;
     margin-bottom: auto;
     background: #c6e2ff;
     position: relative;
@@ -30,28 +30,28 @@ body,html{
     text-align: center;
 }
 
+.form_container{
+    margin-top: 100px;
+}
+
 .brand_logo{
     height: 250px;
     width: 250px;
     border-radius: 50%;
 }
 
-.form_container{
-    margin-top: 100px;
-}
-
-.login_btn{
+.register_btn{
     width: 100%;
     background: #f68b3c !important;
     color: white !important;
 }
 
-.login_btn:focus{
+.register_btn:focus{
     box-shadow: none !important;
     outline: 0px !important;
 }
 
-.login_container{
+.register_container{
     padding: 0 2rem;
 }
 
@@ -63,7 +63,7 @@ body,html{
     border-radius: 0.25rem 0 0 0.25rem !important;
 }
 
-.input_user,.input_pass:focus{
+.input:focus{
     box-shadow: none !important;
     outline: 0px !important;
 }
