@@ -9,6 +9,9 @@
         unset($_SESSION);
         header("Location: login.php");
     }
+
+    // Store the user ID in the session variable
+    $user_id = $_SESSION['userlogin']['id'];
 ?>
 <!DOCTYPE html>
 <html>
@@ -50,6 +53,68 @@
             </ul>
         </nav>
     </div>
-</body>
 
+    <div class="table-responsive">
+        <h1 style="padding-left: 15px;"><u>Mon été</u></h1>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            $.ajax({
+                type: "POST",
+                url: "display_profile.php",
+                dataType: "json",
+                data: {id: <?php echo $user_id?>},
+                success: function(response) {
+                    console.log(response);
+                    let table = "<table><tr><td>"
+                     + response.id + "</td><td>" 
+                     + response.firstname + "</td><td>" 
+                     + response.lastname + "</td><td>" 
+                     + response.email + "</td><td>" 
+                     + response.phonenumber + "</td></tr></table>";
+                    //console.log(table);
+                    $("#user-table tbody").html(table);
+                }
+            });
+        </script>
+    </div>
+
+    <div class="table-responsive">
+        <h1 style="padding-left: 15px;"><u>Mon profil</u></h1>
+        <table id="user-table" class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Phone Number</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            $.ajax({
+                type: "POST",
+                url: "display_profile.php",
+                dataType: "json",
+                data: {id: <?php echo $user_id?>},
+                success: function(response) {
+                    console.log(response);
+                    let table = "<table><tr><td>"
+                     + response.id + "</td><td>" 
+                     + response.firstname + "</td><td>" 
+                     + response.lastname + "</td><td>" 
+                     + response.email + "</td><td>" 
+                     + response.phonenumber + "</td></tr></table>";
+                    //console.log(table);
+                    $("#user-table tbody").html(table);
+                }
+            });
+        </script>
+    </div>
+</body>
 </html>

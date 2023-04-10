@@ -75,7 +75,7 @@
                 dataType: "json",
                 success: function(response) {
                     console.log(response);
-                    var table = "<table>";
+                    let table = "<table>";
                     for (var i = 0; i < response.length; i++) {
                         table += "<tr>";
                         table += "<td>" + response[i].id + "</td>";
@@ -89,10 +89,7 @@
                     $("#user-table tbody").html(table);
                 }
             });
-
-
         </script>
     </div>
 </body>
-
 </html>
