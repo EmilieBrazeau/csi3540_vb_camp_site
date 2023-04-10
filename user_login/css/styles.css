@@ -101,3 +101,10 @@ body,html{
 .d-flex{
     align-items: flex-start;
 }
+
+.table-responsive{
+    width: 60%;
+    background: #c6e2ff;
+    margin: auto;
+    border-radius: 5%;
+}

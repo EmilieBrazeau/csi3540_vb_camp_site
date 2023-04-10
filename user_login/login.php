@@ -66,7 +66,10 @@
                 let valid = this.form.checkValidity();
 
                 if(valid){
-                    let username = $('#username').val();
+                    let firstname   = $('#firstname').val();
+                    let lastname    = $('#lastname').val();
+                    let email       = $('#email').val();
+                    let phonenumber = $('#phonenumber').val();
                     let password = $('#password').val();
 
                     e.preventDefault();
@@ -80,7 +83,7 @@
                                 window.location.href = "index.php";
                             }
                             else if($.trim(data) === "2"){
-                                window.location.href = "index_admin.php";
+                                window.location.href = "admin/index_admin.php";
                             }
                         },
                         error: function(data){

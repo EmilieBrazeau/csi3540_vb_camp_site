@@ -2,7 +2,7 @@
 session_start();
 require_once('config.php');
 
-$username = $_POST['username'];
+$username = $_POST['email'];
 $password = $_POST['password'];
 
 $sql = "SELECT * FROM users WHERE email = ? AND password = ? LIMIT 1";
