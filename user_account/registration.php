@@ -17,31 +17,36 @@
                 </div>
                 <div class="d-flex justify-content-center form_container">
                     <form action="registration.php" method="post">
-                        <h1>Registration</h1>
-                        <p>Fill up the form with correct values.</p>
+                        <h1>Enregistrement</h1>
+                        <p>Veuillez remplir les informations ci-bas.</p>
                         <hr class="mb-3">
 
-                        <label for="firstname"><b>First Name</b></label>
+                        <label for="firstname"><b>Prénom</b></label>
                         <div class="input-group mb-3">
                             <input class="form-control input" id="firstname" type="text" name="firstname" required>
                         </div>
 
-                        <label for="lastname"><b>Last Name</b></label>
+                        <label for="lastname"><b>Nom</b></label>
                         <div class="input-group mb-3">
                             <input class="form-control input" id="lastname" type="text" name="lastname" required>
                         </div>
 
-                        <label for="email"><b>Email address</b></label>
+                        <label for="dateofbirth"><b>Date de naissance (AAAA-MM-JJ)</b></label>
+                        <div class="input-group mb-3">
+                            <input class="form-control input" id="dateofbirth" type="text" name="dateofbirth" required>
+                        </div>
+
+                        <label for="email"><b>Email</b></label>
                         <div class="input-group mb-3">
                             <input class="form-control input" id="email" type="email" name="email" required>
                         </div>
 
-                        <label for="phonenumber"><b>Phone number</b></label>
+                        <label for="phonenumber"><b>Numéro de téléphone</b></label>
                         <div class="input-group mb-3">
                             <input class="form-control input" id="phonenumber" type="text" name="phonenumber" required>
                         </div>
 
-                        <label for="password"><b>Password</b></label>
+                        <label for="password"><b>Mot de passe</b></label>
                         <div class="input-group mb-3">
                             <input class="form-control input" id="password" type="password" name="password" required>
                         </div>
@@ -49,7 +54,7 @@
                         <hr class="mb-3">
 
                         <div class="d-flex justify-content-center mt-3 register_container">
-                            <button class="btn register_btn" type="button" id="register" name="create" value="Sign up">Sign up</button>
+                            <button class="btn register_btn" type="button" id="register" name="create" value="Sign up">Enregistrement</button>
                         </div>
                     </form>
                 </div>
@@ -66,6 +71,7 @@
                 if(valid){
                     let firstname   = $('#firstname').val();
                     let lastname    = $('#lastname').val();
+                    let dateofbirth = $('#dateofbirth').val();
                     let email       = $('#email').val();
                     let phonenumber = $('#phonenumber').val();
                     let password    = $('#password').val();
@@ -75,22 +81,22 @@
                     $.ajax({
                         type: 'POST',
                         url: 'process.php',
-                        data: {firstname: firstname, lastname: lastname, email: email, phonenumber: phonenumber, password: password},
+                        data: {firstname: firstname, lastname: lastname, dateofbirth: dateofbirth, email: email, phonenumber: phonenumber, password: password},
                         success: function(data){
                             Swal.fire({
-                                'title': 'Successfully registered!',
+                                'title': 'Enregistrement réussie!',
                                 'text': data,
                                 'type': 'success'
                             }).then(function(){
-                                if($.trim(data) === "Press OK to log in."){
+                                if($.trim(data) === "Appuyez sur 'OK' pour vous connecter."){
                                     window.location.href = "../user_login/index.php";
                                 }
                             });
                         },
                         error: function(data){
                             Swal.fire({
-                                'title': 'Error',
-                                'text': 'There were errors while saving the data.',
+                                'title': 'Erreur',
+                                'text': "Un erreur s'est produite lors de l'enregistrement.",
                                 'type': 'error'
                             })
                         }

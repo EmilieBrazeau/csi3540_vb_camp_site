@@ -16,6 +16,13 @@ if(isset($_POST)){
     $result = $stmtreplace->execute([$firstname, $lastname, $email, $phonenumber, $password, $id]);
     
     if ($result) {
+        $sql2 = "SELECT * FROM users WHERE id = ? LIMIT 1";
+        $stmtselect = $db->prepare($sql2);
+        $result2 = $stmtselect->execute([$id]);
+        $user = $stmtselect->fetch(PDO::FETCH_ASSOC);
+        if($stmtselect->rowCount() > 0){
+            $_SESSION['userlogin'] = $user;
+        }
         $response_array['status'] = 'success';
         $response_array['message'] = 'Les données ont été mises à jour!';
     } else {

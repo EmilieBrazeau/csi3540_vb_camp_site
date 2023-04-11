@@ -24,14 +24,14 @@
                 </div>
                 <div class="d-flex justify-content-center form_container">
                     <form>
-                        <label for="username"><b>Username (email)</b></label>
+                        <label for="username"><b>Nom d'utilisateur (email)</b></label>
                         <div class="input-group mb-3">
                             <div class="input-group-append">
                                 <span class="input-group-text"><i class="fas fa-user"></i></span>
                             </div>
                             <input type="text" name="username" id="username" class="form-control input_user" required>
                         </div>
-                        <label for="password"><b>Password</b></label>
+                        <label for="password"><b>Mot de passe</b></label>
                         <div class="input-group mb-2">
                             <div class="input-group-append">
                                 <span class="input-group-text"><i class="fas fa-key"></i></span>
@@ -40,13 +40,13 @@
                         </div>
                     
                         <div class="d-flex justify-content-center mt-3 login_container">
-                            <button type="button" name="button" id="login" class="btn login_btn">Login</button>
+                            <button type="button" name="button" id="login" class="btn login_btn">Connexion</button>
                         </div>
                     </form>
                 </div>
                 <div class="mt-4">
-                    <div class="d-flex justify-content-center links"><b>Don't have an account?</b></div>
-                    <div class="d-flex justify-content-center links"><a href="../user_account/registration.php" class="ml-2"><b>Sign Up</b></a></div>
+                    <div class="d-flex justify-content-center links"><b>Pas encore de compte?</b></div>
+                    <div class="d-flex justify-content-center links"><a href="../user_account/registration.php" class="ml-2"><b>Inscris-toi!</b></a></div>
                 </div>
                     <!-- <div class="d-flex justify-content-center">
                         <a href="registration.php">Forgot password?</a>

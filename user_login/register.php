@@ -125,7 +125,7 @@
                     if($.trim(data.slice(0, -1)) === "Vous êtes déjà inscrit au camp #" || $.trim(data) ==="Vous n'êtes pas assez âgé pour vous inscrire à ce camp."){
                         Swal.fire({
                                 'title': 'Inscription refusée!',
-                                'text': data+". Vous serez redirigé à la page d'accueil.",
+                                'text': data+" Vous serez redirigé à la page d'accueil.",
                                 'type': 'success'
                         }).then(function(){
                                 window.location.href = "index.php";
