@@ -1,0 +1,144 @@
+body,html{
+    margin:0;
+    padding:0;
+    height: 100%;
+    background: #3d6dcd !important;
+}
+
+.user_card{
+    height: 400px;
+    width: 350px;
+    margin-top: auto;
+    margin-bottom: auto;
+    background: #c6e2ff;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+}
+
+.brand_logo_container{
+    position: absolute;
+    height: 260px;
+    width: 260px;
+    top: -140px;
+    border-radius: 50%;
+    /* padding: 10px; */
+    text-align: center;
+}
+
+.brand_logo{
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+}
+
+.form_container{
+    margin-top: 100px;
+}
+
+.login_btn{
+    width: 100%;
+    background: #f68b3c !important;
+    color: white !important;
+    margin-top: 25px;
+}
+
+.login_btn:focus{
+    box-shadow: none !important;
+    outline: 0px !important;
+}
+
+.login_container{
+    padding: 0 2rem;
+}
+
+.input-group-text{
+    background: #f68b3c !important;
+    color: white !important;
+    border: 0 !important;
+    height: 100%;
+    border-radius: 0.25rem 0 0 0.25rem !important;
+}
+
+.input_user,.input_pass:focus{
+    box-shadow: none !important;
+    outline: 0px !important;
+}
+
+.custom-checkbox .custom-control-imput:checked~.custom-control-label::before{
+    background-color: #f68b3c !important;
+}
+
+.navbar {
+    max-height: 80px;
+    padding-left: 15px;
+    background: #3d6dcd !important;
+}
+
+.navbar-brand{
+    font-weight: bold;
+    color: white;
+}
+
+.nav-link{
+    color: #F7CD3B;
+}
+
+.nav-text{
+    color: #ffffff;
+}
+
+.navbar-nav {
+    margin-top: -15px; /* adjust the value to your preference */
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.d-flex{
+    align-items: flex-start;
+}
+
+.table-responsive{
+    width: 60%;
+    margin: auto;
+    background: #c6e2ff;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+}
+
+
+.register_btn{
+    width: 20%;
+    background: #f68b3c !important;
+    color: white !important;
+    text-align: center;
+}
+
+.inscription_btn{
+    width: 30%;
+    background: #f68b3c !important;
+    color: white !important;
+    text-align: center;
+}
+
+.modify_btn{
+    width: 30%;
+    background: #F7CD3B !important;
+    color: white !important;
+    text-align: center;
+}
+
+.register_dropdown{
+    width: 10%;
+    text-align: center;
+    border-radius: 2%;
+}
