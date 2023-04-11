@@ -115,9 +115,17 @@ body,html{
     border-radius: 5px;
 }
 
+
 .register_btn{
     width: 20%;
     background: #f68b3c !important;
+    color: white !important;
+    text-align: center;
+}
+
+.modify_btn{
+    width: 30%;
+    background: #3d6dcd !important;
     color: white !important;
     text-align: center;
 }

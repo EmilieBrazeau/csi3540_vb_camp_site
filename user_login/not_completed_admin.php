@@ -23,21 +23,21 @@
         <img src="img/volleyball_logo_camp.png" width="150" height="150" class="d-inline-block align-top" alt="">
         
         <nav class="navbar navbar-expand-lg navbar-light bg-light w-100">
-            <a class="navbar-brand" href="index.php">École de volleyball de plage de l'Outaouais</a>
+            <a class="navbar-brand" href="index_admin.php">École de volleyball de plage de l'Outaouais</a>
             
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="index.php">Accueil<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="index_admin.php">Accueil<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="not_completed.php">À propos</a>
+                    <a class="nav-link" href="not_completed_admin.php">À propos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="not_completed.php">Contact</a>
+                    <a class="nav-link" href="not_completed_admin.php">Contact</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link nav-text" href="index.php">Connecté(e) en tant que: <?php echo $_SESSION['userlogin']['firstname']." ".$_SESSION['userlogin']['lastname']; ?></a>
+                    <a class="nav-link nav-text" href="index_admin.php">Connecté(e) en tant que: <?php echo $_SESSION['userlogin']['username']; ?></a>
                 </li>
                 </ul>
             </div>

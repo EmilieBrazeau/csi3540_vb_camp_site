@@ -98,8 +98,7 @@
 
         </script>
     </div>
-    </div>
-        </br></br>
+    </br></br>
 
     <div class="table-responsive">
         <h1 style="padding-left: 15px;"><u>Mon profil</u></h1>
@@ -136,6 +135,11 @@
                 }
             });
         </script>
+        <br>
+        
+            <div class="text-center">
+            <a href="update_info.php" class="btn modify_btn">Modifier mes informations</a>
+            </div>
     </div>
 </body>
 </html>

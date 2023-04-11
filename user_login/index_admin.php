@@ -28,16 +28,16 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="index_admin.php">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="index_admin.php">Accueil<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="not_completed.php">About</a>
+                    <a class="nav-link" href="not_completed.php">À propos</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="not_completed.php">Contact</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link nav-text" href="index_admin.php">Logged in as: <?php echo $_SESSION['userlogin']['username']; ?></a>
+                    <a class="nav-link nav-text" href="index_admin.php">Connectée en tant que: <?php echo $_SESSION['userlogin']['username']; ?></a>
                 </li>
                 </ul>
             </div>
@@ -45,22 +45,75 @@
             <ul class="navbar-nav ml-auto">
                 
                 <li class="nav-item">
-                <a href="logout.php?logout=true" class="btn login_btn nav-btn">Logout</a>
+                <a href="logout.php?logout=true" class="btn login_btn nav-btn">Déconnexion</a>
                 </li>
             </ul>
         </nav>
     </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <div id="table-container">    
+    </div>
     
-    <div class="table-responsive">
-        <h1 style="padding-left: 15px;"><u>Participants</u></h1>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    $.ajax({
+        type: "POST",
+        url: "get_camp_count.php",
+        dataType: "json",
+        success: function(response) {
+            let count = response.length;
+            console.log("count: "+response.length);
+            
+            for (let i = 0; i < count; i++) {
+                console.log("id: "+response[i].id);
+                // generate table for camp i
+                let table = "<div class='table-responsive'><h1 style='padding-left: 15px;'><u>Participants au camp #" + (i+1) + "</u></h1><table id='user-table-" + (i+1) + "' class='table table-striped'><thead><tr><th>ID</th><th>Prénom</th><th>Nom</th><th>Email</th><th>Numéro de téléphone</th></tr></thead><tbody></tbody></table></div><div></div></br></br></br>";
+                $("#table-container").append(table);
+                // populate table for camp i with data
+                $.ajax({
+                    type: "POST",
+                    url: "display_users.php",
+                    dataType: "json",
+                    data: {camp_number: response[i].id},
+                    success: function(response2) {
+                        let table = "<table>";
+                        for (let j = 0; j < response2.length; j++) {
+                            table += "<tr>";
+                            table += "<td>" + response2[j].id + "</td>";
+                            table += "<td>" + response2[j].firstname + "</td>";
+                            table += "<td>" + response2[j].lastname + "</td>";
+                            table += "<td>" + response2[j].email + "</td>";
+                            table += "<td>" + response2[j].phonenumber + "</td>";
+                            table += "</tr>";
+                        }
+                        table += "</table>";
+                        console.log("#user-table-" + (i+1) + " tbody");
+                        $("#user-table-" + (i+1) + " tbody").html(table);
+                        
+                    }
+                });
+            }
+        },
+        error: function(error) {
+            console.log(error);
+        }
+    });
+
+</script>
+
+
+    
+    <!-- <div class="table-responsive">
+        <h1 style="padding-left: 15px;"><u>Participants au camp #1</u></h1>
         <table id="user-table" class="table table-striped">
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
+                    <th>Prénom</th>
+                    <th>Nom</th>
                     <th>Email</th>
-                    <th>Phone Number</th>
+                    <th>Numéro de téléphone</th>
                 </tr>
             </thead>
             <tbody>
@@ -76,7 +129,7 @@
                 success: function(response) {
                     console.log(response);
                     let table = "<table>";
-                    for (var i = 0; i < response.length; i++) {
+                    for (let i = 0; i < response.length; i++) {
                         table += "<tr>";
                         table += "<td>" + response[i].id + "</td>";
                         table += "<td>" + response[i].firstname + "</td>";
@@ -90,6 +143,6 @@
                 }
             });
         </script>
-    </div>
+    </div> -->
 </body>
 </html>

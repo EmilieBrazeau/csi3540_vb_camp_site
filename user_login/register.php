@@ -29,16 +29,16 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="index.php">Accueil<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="not_completed.php">About</a>
+                    <a class="nav-link" href="not_completed.php">À propos</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="not_completed.php">Contact</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link nav-text" href="index.php">Logged in as: <?php echo $_SESSION['userlogin']['firstname']." ".$_SESSION['userlogin']['lastname']; ?></a>
+                    <a class="nav-link nav-text" href="index.php">Connecté(e) en tant que: <?php echo $_SESSION['userlogin']['firstname']." ".$_SESSION['userlogin']['lastname']; ?></a>
                 </li>
                 </ul>
             </div>
@@ -46,7 +46,7 @@
             <ul class="navbar-nav ml-auto">
                 
                 <li class="nav-item">
-                <a href="logout.php?logout=true" class="btn login_btn nav-btn">Logout</a>
+                <a href="logout.php?logout=true" class="btn login_btn nav-btn">Déconnexion</a>
                 </li>
             </ul>
         </nav>
