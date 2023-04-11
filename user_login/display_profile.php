@@ -5,7 +5,7 @@ session_start();
 
 $user_id = $_POST['id'];
 
-$sql = "SELECT * FROM users WHERE id = ?";
+$sql = "SELECT id,firstname,lastname,date_of_birth,email,phonenumber FROM users WHERE id = ?";
 $stmt = $db->prepare($sql);
 $result = $stmt->execute([$user_id]);
 

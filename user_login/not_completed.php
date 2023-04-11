@@ -34,7 +34,7 @@
                     <a class="nav-link" href="not_completed.php">À propos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="not_completed.php">Contact</a>
+                    <a class="nav-link" href="register.php">Inscription</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link nav-text" href="index.php">Connecté(e) en tant que: <?php echo $_SESSION['userlogin']['firstname']." ".$_SESSION['userlogin']['lastname']; ?></a>

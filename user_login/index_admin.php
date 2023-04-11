@@ -31,10 +31,10 @@
                     <a class="nav-link" href="index_admin.php">Accueil<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="not_completed.php">À propos</a>
+                    <a class="nav-link" href="not_completed_admin.php">À propos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="not_completed.php">Contact</a>
+                    <a class="nav-link" href="not_completed_admin.php">Contact</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link nav-text" href="index_admin.php">Connectée en tant que: <?php echo $_SESSION['userlogin']['username']; ?></a>
@@ -56,93 +56,50 @@
     </div>
     
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script>
-    $.ajax({
-        type: "POST",
-        url: "get_camp_count.php",
-        dataType: "json",
-        success: function(response) {
-            let count = response.length;
-            console.log("count: "+response.length);
-            
-            for (let i = 0; i < count; i++) {
-                console.log("id: "+response[i].id);
-                // generate table for camp i
-                let table = "<div class='table-responsive'><h1 style='padding-left: 15px;'><u>Participants au camp #" + (i+1) + "</u></h1><table id='user-table-" + (i+1) + "' class='table table-striped'><thead><tr><th>ID</th><th>Prénom</th><th>Nom</th><th>Email</th><th>Numéro de téléphone</th></tr></thead><tbody></tbody></table></div><div></div></br></br></br>";
-                $("#table-container").append(table);
-                // populate table for camp i with data
-                $.ajax({
-                    type: "POST",
-                    url: "display_users.php",
-                    dataType: "json",
-                    data: {camp_number: response[i].id},
-                    success: function(response2) {
-                        let table = "<table>";
-                        for (let j = 0; j < response2.length; j++) {
-                            table += "<tr>";
-                            table += "<td>" + response2[j].id + "</td>";
-                            table += "<td>" + response2[j].firstname + "</td>";
-                            table += "<td>" + response2[j].lastname + "</td>";
-                            table += "<td>" + response2[j].email + "</td>";
-                            table += "<td>" + response2[j].phonenumber + "</td>";
-                            table += "</tr>";
+    <script>
+        $.ajax({
+            type: "POST",
+            url: "get_camp_count.php",
+            dataType: "json",
+            success: function(response) {
+                let count = response.length;
+                console.log("count: "+response.length);
+                
+                for (let i = 0; i < count; i++) {
+                    console.log("id: "+response[i].id);
+                    // generate table for camp i
+                    let table = "<div class='table-responsive'><h1 style='padding-left: 15px;'><u>Participants au camp #" + (i+1) + "</u></h1><table id='user-table-" + (i+1) + "' class='table table-striped'><thead><tr><th>ID</th><th>Prénom</th><th>Nom</th><th>Date de naissance</th><th>Email</th><th>Numéro de téléphone</th></tr></thead><tbody></tbody></table></div><div></div></br></br></br>";
+                    $("#table-container").append(table);
+                    // populate table for camp i with data
+                    $.ajax({
+                        type: "POST",
+                        url: "display_users.php",
+                        dataType: "json",
+                        data: {camp_number: response[i].id},
+                        success: function(response2) {
+                            let table = "<table>";
+                            for (let j = 0; j < response2.length; j++) {
+                                table += "<tr>";
+                                table += "<td>" + response2[j].id + "</td>";
+                                table += "<td>" + response2[j].firstname + "</td>";
+                                table += "<td>" + response2[j].lastname + "</td>";
+                                table += "<td>" + response2[j].date_of_birth + "</td>";
+                                table += "<td>" + response2[j].email + "</td>";
+                                table += "<td>" + response2[j].phonenumber + "</td>";
+                                table += "</tr>";
+                            }
+                            table += "</table>";
+                            console.log("#user-table-" + (i+1) + " tbody");
+                            $("#user-table-" + (i+1) + " tbody").html(table);
+                            
                         }
-                        table += "</table>";
-                        console.log("#user-table-" + (i+1) + " tbody");
-                        $("#user-table-" + (i+1) + " tbody").html(table);
-                        
-                    }
-                });
-            }
-        },
-        error: function(error) {
-            console.log(error);
-        }
-    });
-
-</script>
-
-
-    
-    <!-- <div class="table-responsive">
-        <h1 style="padding-left: 15px;"><u>Participants au camp #1</u></h1>
-        <table id="user-table" class="table table-striped">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Prénom</th>
-                    <th>Nom</th>
-                    <th>Email</th>
-                    <th>Numéro de téléphone</th>
-                </tr>
-            </thead>
-            <tbody>
-            </tbody>
-        </table>
-
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script>
-            $.ajax({
-                type: "POST",
-                url: "display_users.php",
-                dataType: "json",
-                success: function(response) {
-                    console.log(response);
-                    let table = "<table>";
-                    for (let i = 0; i < response.length; i++) {
-                        table += "<tr>";
-                        table += "<td>" + response[i].id + "</td>";
-                        table += "<td>" + response[i].firstname + "</td>";
-                        table += "<td>" + response[i].lastname + "</td>";
-                        table += "<td>" + response[i].email + "</td>";
-                        table += "<td>" + response[i].phonenumber + "</td>";
-                        table += "</tr>";
-                    }
-                    table += "</table>";
-                    $("#user-table tbody").html(table);
+                    });
                 }
-            });
-        </script>
-    </div> -->
+            },
+            error: function(error) {
+                console.log(error);
+            }
+        });
+    </script>
 </body>
 </html>

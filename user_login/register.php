@@ -35,7 +35,7 @@
                     <a class="nav-link" href="not_completed.php">À propos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="not_completed.php">Contact</a>
+                    <a class="nav-link" href="register.php">Inscription</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link nav-text" href="index.php">Connecté(e) en tant que: <?php echo $_SESSION['userlogin']['firstname']." ".$_SESSION['userlogin']['lastname']; ?></a>
@@ -85,8 +85,8 @@
                         table += "<td>" + response[i].location + "</td>";
                         table += "<td>" + response[i].start_date + "</td>";
                         table += "<td>" + response[i].end_date + "</td>";
-                        table += "<td>" + response[i].max_participants + "</td>";
-                        table += "<td>" + response[i].age + "</td>";
+                        table += "<td>" + response[i].places_left + "</td>";
+                        table += "<td>" + response[i].min_age + "</td>";
                         table += "<td>" + response[i].price + "</td>";
                         table += "</tr>";
                     }
@@ -122,18 +122,22 @@
                 url: "process_camp_registration.php",
                 data: {camp_id: campId},
                 success: function(data) {
-                    if($.trim(data.slice(0, -1)) === "Vous êtes déjà inscrit au camp #"){
+                    if($.trim(data.slice(0, -1)) === "Vous êtes déjà inscrit au camp #" || $.trim(data) ==="Vous n'êtes pas assez âgé pour vous inscrire à ce camp."){
                         Swal.fire({
                                 'title': 'Inscription refusée!',
-                                'text': data,
+                                'text': data+". Vous serez redirigé à la page d'accueil.",
                                 'type': 'success'
-                        })
+                        }).then(function(){
+                                window.location.href = "index.php";
+                        });
                     }else{
                         Swal.fire({
                                 'title': 'Inscription réussie!',
-                                'text': data,
+                                'text': data+". Vous serez redirigé à la page d'accueil.",
                                 'type': 'success'
-                        })
+                        }).then(function(){
+                                window.location.href = "index.php";
+                        });
                     }
                 }
             });

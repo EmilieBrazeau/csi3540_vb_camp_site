@@ -72,6 +72,9 @@
             <tbody>
             </tbody>
         </table>
+        <div class="text-center">
+            <a href="register.php" class="btn inscription_btn">M'inscrire</a>
+        </div>
 
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script>
@@ -89,7 +92,7 @@
                             + response[i].start_date + "</td><td>" 
                             + response[i].end_date + "</td><td>" 
                             + response[i].places_left + "</td><td>"
-                            + response[i].age + "</td><td>"
+                            + response[i].min_age + "</td><td>"
                             + response[i].price + "</td></tr>";
                     }
                     $("#summer-table tbody").html(table);
@@ -106,10 +109,11 @@
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
+                    <th>Prénom</th>
+                    <th>Nom</th>
+                    <th>Date de naissance</th>
                     <th>Email</th>
-                    <th>Phone Number</th>
+                    <th>Numéro de téléphone</th>
                 </tr>
             </thead>
             <tbody>
@@ -123,23 +127,21 @@
                 dataType: "json",
                 data: {id: <?php echo $user_id?>},
                 success: function(response) {
-                    //console.log(response);
                     let table = "<table><tr><td>"
                      + response.id + "</td><td>" 
                      + response.firstname + "</td><td>" 
                      + response.lastname + "</td><td>" 
+                     + response.date_of_birth + "</td><td>" 
                      + response.email + "</td><td>" 
                      + response.phonenumber + "</td></tr></table>";
-                    //console.log(table);
                     $("#user-table tbody").html(table);
                 }
             });
         </script>
         <br>
-        
-            <div class="text-center">
+        <div class="text-center">
             <a href="update_info.php" class="btn modify_btn">Modifier mes informations</a>
-            </div>
+        </div>
     </div>
 </body>
 </html>

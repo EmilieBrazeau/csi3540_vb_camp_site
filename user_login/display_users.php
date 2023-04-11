@@ -3,7 +3,7 @@ session_start();
 require_once('config.php');
 
 $camp_number = $_POST['camp_number'];
-$sql = "SELECT users.id, users.firstname, users.lastname, users.email, users.phonenumber
+$sql = "SELECT users.id, users.firstname, users.lastname, users.date_of_birth, users.email, users.phonenumber
 FROM registrations
 INNER JOIN users ON registrations.user_id = users.id
 WHERE registrations.camp_id = ?";
