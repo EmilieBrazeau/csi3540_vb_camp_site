@@ -59,7 +59,7 @@
     <script>
         $.ajax({
             type: "POST",
-            url: "get_camp_count.php",
+            url: "api/get_camp_count.php",
             dataType: "json",
             success: function(response) {
                 let count = response.length;
@@ -73,7 +73,7 @@
                     // populate table for camp i with data
                     $.ajax({
                         type: "POST",
-                        url: "display_users.php",
+                        url: "api/display_users.php",
                         dataType: "json",
                         data: {camp_number: response[i].id},
                         success: function(response2) {

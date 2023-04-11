@@ -73,7 +73,7 @@
 
                     $.ajax({
                         type:'POST',
-                        url: 'jslogin.php',
+                        url: 'api/jslogin.php',
                         data: {username: username, password: password},
                         success: function(data){
                             if($.trim(data) === "1"){

@@ -31,34 +31,34 @@
                     </div>
                 </div>
                 <div class="d-flex justify-content-center form_container">
-                    <form action="modify_profile.php" method="post">
+                    <form action="api/modify_profile.php" method="post">
                         <h1>Modification</h1>
                         <p>Veuillez remplir tous les champs.</p>
                         <hr class="mb-3">
 
                         <label for="firstname"><b>Prénom</b></label>
                         <div class="input-group mb-3">
-                            <input class="form-control input" id="firstname" type="text" name="firstname" required>
+                            <input class="form-control input" id="firstname" type="text" name="firstname" value="<?php echo $_SESSION['userlogin']['firstname'] ?? ""?>" required>
                         </div>
 
                         <label for="lastname"><b>Nom</b></label>
                         <div class="input-group mb-3">
-                            <input class="form-control input" id="lastname" type="text" name="lastname" required>
+                            <input class="form-control input" id="lastname" type="text" name="lastname" value="<?php echo $_SESSION['userlogin']['lastname'] ?? ""?>"required>
                         </div>
 
                         <label for="email"><b>Adresse courriel</b></label>
                         <div class="input-group mb-3">
-                            <input class="form-control input" id="email" type="email" name="email" required>
+                            <input class="form-control input" id="email" type="email" name="email" value="<?php echo $_SESSION['userlogin']['email'] ?? ""?>"required>
                         </div>
 
                         <label for="phonenumber"><b>Numéro de téléphone</b></label>
                         <div class="input-group mb-3">
-                            <input class="form-control input" id="phonenumber" type="text" name="phonenumber" required>
+                            <input class="form-control input" id="phonenumber" type="text" name="phonenumber" value="<?php echo $_SESSION['userlogin']['phonenumber'] ?? ""?>"required>
                         </div>
 
                         <label for="password"><b>Mot de passe</b></label>
                         <div class="input-group mb-3">
-                            <input class="form-control input" id="password" type="password" name="password" required>
+                            <input class="form-control input" id="password" type="password" name="password" value="<?php echo $_SESSION['userlogin']['password'] ?? ""?>" required>
                         </div>
                         
                         <hr class="mb-3">
@@ -89,7 +89,7 @@
 
                     $.ajax({
                         type: 'POST',
-                        url: 'modify_profile.php',
+                        url: 'api/modify_profile.php',
                         dataType: "json",
                         data: {id: <?php echo $user_id?>, firstname: firstname, lastname: lastname, email: email, phonenumber: phonenumber, password: password},
                         success: function(data){

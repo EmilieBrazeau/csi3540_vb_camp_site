@@ -74,7 +74,7 @@
         <script>
             $.ajax({
                 type: "POST",
-                url: "display_camps.php",
+                url: "api/display_camps.php",
                 dataType: "json",
                 success: function(response) {
                     console.log(response);
@@ -103,7 +103,7 @@
         function populateDropdown() {
             $.ajax({
                 type: "POST",
-                url: "display_camps.php",
+                url: "api/display_camps.php",
                 dataType: "json",
                 success: function(data) {
                     // Loop through the data and add each option to the dropdown
@@ -119,7 +119,7 @@
             var campId = $('#camp-select').val();
             $.ajax({
                 type: "POST",
-                url: "process_camp_registration.php",
+                url: "api/process_camp_registration.php",
                 data: {camp_id: campId},
                 success: function(data) {
                     if($.trim(data.slice(0, -1)) === "Vous êtes déjà inscrit au camp #" || $.trim(data) ==="Vous n'êtes pas assez âgé pour vous inscrire à ce camp."){

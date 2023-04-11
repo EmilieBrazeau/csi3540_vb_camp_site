@@ -80,7 +80,7 @@
         <script>
             $.ajax({
                 type: "POST",
-                url: "display_summer.php",
+                url: "api/display_summer.php",
                 dataType: "json",
                 data: {id: <?php echo $user_id?>},
                 success: function(response) {
@@ -123,7 +123,7 @@
         <script>
             $.ajax({
                 type: "POST",
-                url: "display_profile.php",
+                url: "api/display_profile.php",
                 dataType: "json",
                 data: {id: <?php echo $user_id?>},
                 success: function(response) {
