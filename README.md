@@ -22,6 +22,9 @@ To run this app locally, you'll need to have the following software installed on
 - You should see the login page.
 - Log in with existing credentials (from seed) or register. Use username: `admin`, password: `admin` to access admin view.
 
+## Demo
+**I filmed a [demo](/docs/LISTENtoME.mp4) in case you have trouble running the code.**
+
 ## How it Works
 The App has two views: one user and one admin. A user can create an account, see and update his profile information, see the camp(s) he's registered in, see available camps and register to them. The admin view simply reads the participants registered in each camp.
 
@@ -31,3 +34,17 @@ The app uses PHP to communicate with the MySQL database, and JavaScript to provi
 To make sure I met the requirements, I implemented a few particularities. In the admin view, the tables are dynamically created, so I get from the table the number of offered camps and display this amount of tables and fill it in with the correct values.
 
 Also, when displaying camps to users, I added a calculated attribute 'places_left' which is calculated from the camps[max_participants] minus the number of registered users.
+
+## Screenshots
+**Log in pages**<br>
+<img src="docs/screenshots/login.png" alt="Login" width="49%"/>
+<img src="docs/screenshots/register_profile.png" alt="Register profile" width="49%"/><br>  
+
+**User Home Page**
+<img src="docs/screenshots/user_view.png" alt="User View" width="100%"/><br>  
+
+**User Camp Registration**
+<img src="docs/screenshots/register_camp.png" alt="Login" width="100%"/><br>  
+
+**Admin Home Page**
+<img src="docs/screenshots/admin_view.png" alt="Login" width="100%"/>
