@@ -20,7 +20,9 @@ To run this app locally, you'll need to have the following software installed on
 - Start the PHP server by running the command `php -S localhost:8000`.
 - Open your web browser and go to `http://localhost:8000/public/index.php`.
 - You should see the login page.
-- Log in with existing credentials (from seed) or register. Use username: `admin`, password: `admin` to access admin view.
+- Log in with existing credentials (from seed) or register. Use username: `admin`, password: `admin` to access admin view, or username: `justin.tang@gmail.com`, password: `JustinTang` to access user view. This specific user is already registered to camp 1 from `seed.sql` but can be registered in camp 2!
+
+-**Make sure to follow email format. If nothing happens when you press register, it is most likely because of input format**
 
 ## Demo
 **I filmed a [demo](/docs/LISTENtoME.mp4) in case you have trouble running the code.**
@@ -34,6 +36,12 @@ The app uses PHP to communicate with the MySQL database, and JavaScript to provi
 To make sure I met the requirements, I implemented a few particularities. In the admin view, the tables are dynamically created, so I get from the table the number of offered camps and display this amount of tables and fill it in with the correct values.
 
 Also, when displaying camps to users, I added a calculated attribute 'places_left' which is calculated from the camps[max_participants] minus the number of registered users.
+
+## Next Steps
+- Encode passwords
+- Show message when input type/format is incorrect
+- Show more camp details in dropdown menu of Register to Camp page
+- Better database implementation
 
 ## Screenshots
 **Log in pages**<br>
