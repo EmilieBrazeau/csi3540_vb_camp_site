@@ -1,4 +1,7 @@
 # Website: Volleyball Summer Camp
+**Émilie Brazeau, 300209120**  
+**Assignment 4, CSI3540**  
+**Winter 2023, University of Ottawa**
 
 ## Description
 This App is a web application that was built using PHP, JavaScript, HTML, and CSS. The app uses MySQL as its database, and PHPMyAdmin to manage the database.
@@ -56,3 +59,6 @@ Also, when displaying camps to users, I added a calculated attribute 'places_lef
 
 **Admin Home Page**
 <img src="docs/screenshots/admin_view.png" alt="Login" width="100%"/>
+
+## Documentation
+This assignment was added to my [Portfolio](https://github.com/EmilieBrazeau/csi3540_portfolio).
